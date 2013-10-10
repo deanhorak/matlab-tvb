@@ -11,14 +11,4 @@ the standard distribution of TVB.
 Currently, data is saved somewhere on the local computer, so this interface
 won't work over a network, but this would be possible in the future.
 
-If you are not using the standard distribution of TVB, but rather just the
-scientific_library, you just need to make sure you've got cherrypy and h5py 
-installed. Prefer using pip, your package manger may not get the most
-recent versions. You may then launch the tvb/api/http.py file to start
-the server.
-
-For the moment, Octave is not supported, but this would be easily remedied
-by writing a function to shell out to wget/curl to do the HTTP calls. Please
-submit such a function if you write it.
-
 
