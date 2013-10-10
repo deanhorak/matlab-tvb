@@ -1,13 +1,36 @@
 %% determine url
-% We communicate with TVB as a server, so need to know where it is
-% and use that address for all calls
-sv = vb_url('localhost', 8080)
+
+% For each request to TVB, we need to know it's address. Upon
+% launching TVB, a web browser window opens; please copy that address
+% here if it is different:
+
+sv = vb_url('http://127.0.0.1:8080/user/')
 
 %% set the number of CPUs used for simulations
 vb_reset(sv, 2)
 
 %% get info on classes in TVB
 vb = vb_dir(sv);
+
+% after this call, try TAB-complete on the struct vb. This will provide
+% a list of modules, where you can choose the module and then tab complete
+% to obtain a list of classes, e.g.
+
+% >>> vb.<TAB>         
+% >>> vb. [ models   ]
+%         [ monitors ]
+%            ....
+%
+% >>> vb.models.<TAB>
+% >>> vb.models. [ JansenRit  ]
+%                    ....
+
+%% info on individual class
+
+% If you evaluate, e.g. vb.models.JansenRit, you obtain the help for this
+% class, along with a list of attributes
+
+vb.models.JansenRit
 
 %% try a simulation
 

@@ -1,15 +1,9 @@
-function url = vb_url(host, port)
+function url = vb_url(address)
 %
-% url = vb_url(host, port)
+% Returns the server url for the default address opened by the 
+% TVB distribution. 
 %
-% For given host and port, compute the correct url for TVB server
-%
-% url = vb_url
-%
-% Use defaults, 'localhost', 8080
-%
+% 
 
-if nargin < 1, host = 'localhost'; end
-if nargin < 2, port = 8080; end
-
-url = sprintf('http://%s:%d/', host, port);
+parts = strsplit(address, '/');
+url = ['http://' parts{2} '/']
